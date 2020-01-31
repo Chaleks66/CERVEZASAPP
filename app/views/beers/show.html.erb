@@ -1,0 +1,21 @@
+<div class="card-deck">
+    <div class="card">
+      <%= image_tag @beer.picture, class:'card-img-top', 'height': '500px', 'width': '200px' %> 
+       <div class="card-body">
+         <h5 class="card-title"><%= @beer.name %></h5>
+         <h5 class="card-title"><%= @beer.price %></h5>
+         <h5 class="card-title"><%= @beer.description %></h5>
+         <h5 class="card-title"><%= @beer.available ? 'Disponible' : 'Agotada' %></h5>
+         <p class="card-text"><small class="text-muted">Last updated: <%= time_ago_in_words(@beer.created_at)%></small></p>
+    
+         <%= link_to "edit", edit_beer_path(@beer) %> |
+         <%= link_to "delete", delete_beer_path(@beer), method: :delete, data: { confirm: 'Are you sure?'} %>
+
+         </div>
+    
+    </div>
+    </div>
+
+
+
+    <%= link_to "Nueva Chela", new_beer_path %>
